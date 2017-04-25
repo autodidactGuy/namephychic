@@ -18,7 +18,7 @@ const ApiAiAssistant = require('actions-on-google').ApiAiAssistant;
 const firebaseAdmin = require('firebase-admin');
 
 // Import local JSON file as Cloud Function dependency
-const cert = require('path/to/serviceAccountKey.json');
+const cert = require('key.json');
 
 // API.AI actions
 const WELCOME_ACTION = 'input.welcome';
@@ -31,10 +31,12 @@ const UNHANDLED_DEEP_LINK_ACTION = 'deeplink.unknown';
 const LOCATION_DATA = 'location';
 const NAME_DATA = 'name';
 
+
 firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(cert),
-  databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+  databaseURL: "https://justaskme-165715.firebaseio.com"
 });
+
 
 function encodeAsFirebaseKey(string) {
   return string.replace(/\%/g, '%25')
